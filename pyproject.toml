@@ -1,0 +1,25 @@
+[project]
+name = "overdueist"
+version = "0.0.1"
+description = ""
+authors = [
+    {name = "Keith Scheiwiller"}
+]
+readme = "README.md"
+requires-python = ">=3.14,<4"
+dependencies = [
+    "apprise==1.9.2",
+    "click==8.1.8",
+    "requests==2.32.3",
+    "todoist_api_python==4.0.0",
+]
+
+[project.scripts]
+overdueist = "overdueist.cli:main"
+
+[tool.poetry]
+packages = [{include = "overdueist", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
