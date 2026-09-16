@@ -14,6 +14,14 @@ dependencies = [
     "todoist_api_python==4.0.0",
 ]
 
+[dependency-groups]
+test = [
+    "pytest"
+]
+
+[tool.poetry.group.test]
+optional = true
+
 [project.scripts]
 overdueist = "overdueist.cli:main"
 
@@ -23,3 +31,7 @@ packages = [{include = "overdueist", from = "src"}]
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest]
+pythonpath = ["src"]
+addopts = ["--import-mode=importlib"]
