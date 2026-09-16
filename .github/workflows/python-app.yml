@@ -23,11 +23,12 @@ jobs:
       uses: actions/setup-python@v7
       with:
         python-version: "3.14"
-    - name: Build with Poetry
+    - name: Build and install with Poetry
       run: |
         python -m pip install --upgrade pip
         pip install poetry flake8 pytest
         poetry build
+        poetry install
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
